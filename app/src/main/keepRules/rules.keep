@@ -10,3 +10,6 @@
 #-keepclassmembers class fqcn.of.javascript.interface.for.webview {
 #   public *;
 #}
+
+# Giu nguyen ten truong cua DTO de Gson anh xa JSON dung khi bat R8 (ban release)
+-keep class ute.udn.bt_lecture9.network.StudentDto { *; }
