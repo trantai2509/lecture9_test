@@ -85,11 +85,7 @@ class StudentListFragment : Fragment() {
 
     private fun setupListeners() {
         binding.fabAdd.setOnClickListener {
-            Toast.makeText(
-                requireContext(),
-                "Đang chuẩn bị hộp thoại thêm sinh viên",
-                Toast.LENGTH_SHORT
-            ).show()
+            AddStudentDialogFragment().show(childFragmentManager, "ADD_STUDENT_DIALOG")
         }
 
         binding.toolbar.setOnMenuItemClickListener { menuItem ->
