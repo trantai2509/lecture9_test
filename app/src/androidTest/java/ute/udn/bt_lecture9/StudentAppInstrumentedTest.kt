@@ -181,11 +181,18 @@ class StudentAppInstrumentedTest {
             onView(withId(R.id.tvStudentCountBadge)).check(matches(withText("4 sinh viên")))
 
             // 12. Xóa toàn bộ để kiểm tra Empty State
-            listOf("Phạm Quốc Dũng", "Lê Hoàng Phúc", "Trần Thị Mai", "Nguyễn Văn An").forEach { name ->
+            val remainingNames = listOf("Phạm Quốc Dũng", "Lê Hoàng Phúc", "Trần Thị Mai", "Nguyễn Văn An")
+            remainingNames.forEachIndexed { index, name ->
                 onView(deleteButtonForStudent(name)).perform(click())
                 onView(withText("Xóa")).perform(click())
+                val expectedRemaining = remainingNames.size - 1 - index
+                waitUntilMatches(
+                    withId(R.id.tvStudentCountBadge),
+                    withText("$expectedRemaining sinh viên")
+                )
+                // Chờ DefaultItemAnimator hoàn tất hiệu ứng dịch chuyển dòng trước khi bấm dòng kế tiếp
+                Thread.sleep(350)
             }
-            waitUntilMatches(withId(R.id.tvStudentCountBadge), withText("0 sinh viên"))
             onView(withId(R.id.layoutEmpty)).check(matches(isDisplayed()))
         }
     }
