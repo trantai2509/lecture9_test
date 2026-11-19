@@ -1,3 +1,14 @@
 <resources>
-    <string name="app_name">bt_lecture9</string>
+    <string name="app_name">StudentMVVM</string>
+    <string name="title_student_list">Quản Lý Sinh Viên</string>
+    <string name="label_student_list">Danh sách sinh viên</string>
+    <string name="action_sync_cloud">Đồng bộ Cloud</string>
+    <string name="empty_title">Chưa có sinh viên nào</string>
+    <string name="empty_subtitle">Nhấn nút + bên dưới để thêm sinh viên mới</string>
+    <string name="cd_add_student">Thêm sinh viên mới</string>
+    <string name="cd_delete_student">Xóa sinh viên</string>
+    <string name="hint_full_name">Họ và tên sinh viên *</string>
+    <string name="hint_student_code">Mã số sinh viên (MSSV) *</string>
+    <string name="hint_email">Email (để trống để tự tạo)</string>
+    <string name="hint_gpa">Điểm GPA (0.0 - 4.0) *</string>
 </resources>
